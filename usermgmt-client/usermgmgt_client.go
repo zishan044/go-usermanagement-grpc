@@ -39,4 +39,12 @@ Name: %s,
 Age: %d
 Id: %d`, r.GetName(), r.GetAge(), r.GetId())
 	}
+
+	params := &pb.GetUsersParams{}
+	r, err := c.GetUsers(ctx, params)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Print("\nUSER LIST:\n")
+	fmt.Printf("r.UserList: %v", r.GetUsers())
 }
