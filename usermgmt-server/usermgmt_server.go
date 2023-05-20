@@ -28,6 +28,7 @@ func (s *UserManagementServer) CreateNewUser(ctx context.Context, in *pb.NewUser
 }
 
 func main() {
+
 	ln, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatal(err)
